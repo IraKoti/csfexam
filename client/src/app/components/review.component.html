@@ -1,0 +1,17 @@
+<table>
+    <tr>
+        <td width="100px">Search Result</td>
+        <td><button (click)="back()">Back</button></td>
+    </tr>
+    <tr *ngFor="let r of reviews">
+        <td><img src="/assets/placeholder.jpg"></td>
+        <td><a href="{{r.link}}" target="_blank">{{r.display_title}}</a><br>
+            {{r.mpaa_rating}}<br>
+            {{r.summary_short}}<br>
+            comments: count<br>
+            <button [routerLink]="['/comment', r.display_title]">Comment</button>
+        </td>
+    </tr>
+</table>
+
+

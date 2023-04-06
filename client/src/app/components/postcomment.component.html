@@ -1,0 +1,30 @@
+<form [formGroup]="commentForm" (ngSubmit)="postComment()">
+    <table>
+        <tr>
+            <td colspan="2">Post comment for {{commentMovie}}</td>
+
+        </tr>
+        <tr>
+            <td>Name: </td>
+            <td><input type="text" formControlName="posterName"></td>
+        </tr>
+        <tr>
+            <td>Rating: </td>
+            <td><input type="number" formControlName="commentRating" min="1" max="5" step="1"></td>
+        </tr>
+        <tr>
+            <td colspan="2">comment</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="2"><textarea formControlName="comment" rows="4" cols="50"></textarea></td>
+        </tr>
+        <tr>
+            <td><button (click)="back()">Back</button></td>
+            <td><button type="submit" [disabled]="formInvalid()">Post</button></td>
+        </tr>
+    </table>
+</form>
